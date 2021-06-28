@@ -1,0 +1,72 @@
+2020-11-02 10:35:49,832 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 10:35:50,458 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-02 10:35:53,560 - peer0.org1.example.com installed sucess
+2020-11-02 10:35:53,560 - peer1.org1.example.com installed sucess
+2020-11-02 10:37:46,129 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 10:37:49,087 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 10:37:49,137 - cannot get package for chaincode (goodsApply:1.0) init fail
+2020-11-02 10:38:35,851 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 10:38:37,960 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 10:39:12,969 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 671aca28934c1b8cb29763d737279ef09e94fbc804762b600f59bd0e6028902c to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:93)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-02 10:39:12,974 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 671aca28934c1b8cb29763d737279ef09e94fbc804762b600f59bd0e6028902c to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-02 10:39:18,677 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 10:39:21,482 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 10:39:56,493 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 7506b0fd05d3f98ed7046f0d6c36189a0e3f9b805fbc068fbe4cf78e173ffe4b to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:93)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-02 10:39:56,496 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 7506b0fd05d3f98ed7046f0d6c36189a0e3f9b805fbc068fbe4cf78e173ffe4b to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-02 10:40:19,399 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 10:40:22,157 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 10:40:22,310 - peer0.org1.example.com init sucess
+2020-11-02 14:15:12,291 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 14:15:13,017 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-02 14:15:15,236 - error installing chaincode code goodsInfo:1.0(chaincode /var/hyperledger/production/chaincodes/goodsInfo.1.0 exists) installed fail
+2020-11-02 14:15:15,236 - error installing chaincode code goodsInfo:1.0(chaincode /var/hyperledger/production/chaincodes/goodsInfo.1.0 exists) installed fail
+2020-11-02 17:55:57,510 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 17:55:59,732 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-02 17:56:13,079 - peer0.org1.example.com installed sucess
+2020-11-02 17:56:13,080 - peer1.org1.example.com installed sucess
+2020-11-02 17:56:57,245 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 17:57:00,574 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 17:57:35,584 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction cb95143efc5212c0194c4d96f1dd2bd29776f04d5fe4c09dc064f45e5d47e6e8 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-02 17:57:35,592 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction cb95143efc5212c0194c4d96f1dd2bd29776f04d5fe4c09dc064f45e5d47e6e8 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-02 17:57:40,943 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 17:57:44,103 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 17:58:19,113 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 5380dac150fafebed9f5d1a69b361d25e7128a87176b368b7fc99537c7dc98f1 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-02 17:58:19,116 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 5380dac150fafebed9f5d1a69b361d25e7128a87176b368b7fc99537c7dc98f1 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-02 17:58:43,787 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 17:58:47,161 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 17:58:56,376 - peer0.org1.example.com init sucess
+2020-11-02 18:01:44,942 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 18:01:44,950 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-02 18:01:49,393 - Channel Channel{id: 2, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-02 18:01:56,399 - data is <ByteString@41925502 size=23>
+2020-11-02 18:01:56,542 - CA Name: , Version: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVVENDQWZpZ0F3SUJBZ0lSQVA4aTJ1TmVLRDZnUlAva1JGbEZxeWd3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpJdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaekl1WlhoaGJYQnNaUzVqYjIwd0hoY05NakF3TnpNeE1EazFNekF3V2hjTk16QXdOekk1TURrMU16QXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NaTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk1pNWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkIzVGhCbWJLS0w2OUt2UVlEWHQ0bW1Xb05JeGk2c096WjFoRkVMMDVhK2ZmbkpHb1FXeXVBM2FNWnhNUEo3aApzOExSVFdNUWI0bi9XVGNqcWRaU3hUbWpiVEJyTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVCkJnZ3JCZ0VGQlFjREFnWUlLd1lCQlFVSEF3RXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWcKb2ZOZloxVFQyS2s0L3NvRWZ1a3RMTkFsaytSdWhMZWJhYXBFTEJ1bFltY3dDZ1lJS29aSXpqMEVBd0lEUndBdwpSQUlnVnFQeFEwbEIzSk12eGJOZUhaL3I3dzU4SDFmejNxTFZmb2xWdjdFSDlPd0NJRVJIK2I3L0dYV1UxUlQ1CnRGL1pFa0FjLzBoTkpCeTk2MDRLWjBWMWNsN1MKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=, issuerPublicKey: CgJPVQoEUm9sZQoMRW5yb2xsbWVudElEChBSZXZvY2F0aW9uSGFuZGxlEkQKICQCf7cmys5VmWlInWGYmHViFj9llKG/UR56E5sWazKhEiDE/ri9PyUfHHbNpbemVt8VP3gKxDckyAP+xf0Hw2MHbxpECiBPeSeYh7VcTMgK/GeNgKq/9XhLUwsGTwQWiHUbJKQXwxIgTQQPh+XTVsiNrxRJgqzWbKYbySMhsymDFxzXnTw30EsiRAogaUSM1/pRhSGRJdNcRudyMqI1r6jm46Mw77iwoeLNtkMSICVZQO4vKI0LxmhMrV5asJTps4hL5ftdTLyryeqTMUOkIkQKIF8MtJAqfzLoxvk1x6eUi+BuM8tJ3PHNkPseHJDINqvaEiDmD424sZuLwH8YyPB67+QcY5X73lmepq/nyMbqgeEncyJECiDoHmunXPO4oCmuL6g+TydwiTImXWCrRAjfkHW4sm2gcxIgXAzCJBNxQcxAnrI3Lisr7GED4gMRQaRAvdU/HILtE0YiRAogd4dVSV6vDq1Y8dLVPwaiXF+wuoKCiE3zhsnbZ9g1pCISIAuJajZwUfBK3SVc5BicaKmhb+JmKCXWUu/cf5OyFkeGKogBCiCUU9fn5Ofh2etJGUjqI6tr1t8tZBzkk/LH6uFFSCKhihIg5yJyqy+y8wXHQ2FBk+5UzfcmlE8PHZ3/4RuwOWSbG2QaIHUJoIPrq9/YhkW1pPqqpBgaHQQVy/DaXe9VO2UuUn5TIiAUbqDWjkiYleb5cgtSkyrSwkgi1pv029JrI6xytKfY0DJECiAXY9hER5BmI/sVl8bHooOtsq6ySogzc8uiFmZSQ8ZLExIgJQbAhQivDfuFKu4AkaQ+coH7gHMYILGmVCLjLZ6hgVY6RAog7sWTngcctXR2w1ByeVYGznA8dG1nHP2poQFunI8OVBcSIFku1QA8H/sZpZHHDbWhZVb1S900fQKW44F/+YZvV8k+QiAEo+P1BtjYI5Q3YuugSYbGlGZZNgx/NSqg1iNxsiQ/q0ogDAKdRVlK/8h1kVggjbOQEy4KJxC4Ai4nWuKSn+NAfCxSIKLkL7Gaq2iOeoAhgNpTIfJTlHxU6HOXDbRY4oJonZ7k, issuerRevocationPublicKey: LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUhZd0VBWUhLb1pJemowQ0FRWUZLNEVFQUNJRFlnQUU1QUdzekJGM3FBeEwvbmk1SktESklwRlhOTnRrOEJMeQpSVGVqTlBNT0hyVFgyei9tT0ovUFlyM2VZN1V1TTlNNEN2Ymw2KzFpSkF0L2VocGtyUHFRYlluaGFad3NDaWZlCmhHaHg1QzM1VGV0bG1ORmpWTUpMUTMxd2FLSFdOUDg3Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=
+2020-11-02 18:01:56,543 - CA Version: 1.4.0
+2020-11-02 18:01:56,923 - peer0.org1.example.com invoke proposal create sucess

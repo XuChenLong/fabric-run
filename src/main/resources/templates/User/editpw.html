@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>修改用户界面</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+<div id="user-add">
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        <div class="logo fl">
+            <div class="logo fl">
+                基于区块链的资产管理系统
+            </div>
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+                     {{loginName}}
+                    <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="User_Message">个人资料</a></li>
+                    <li><a href="/U_editpw">修改密码</a></li>
+                    <li><a href="User_signout">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <!--侧边栏-->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="Userindex">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        当前申请
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="User_apply">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        租用申请
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="User_property_look">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        资产信息查询
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4>修改用户密码</h4>
+                <p class="tips" v-text="err"></p>
+            </div>
+            <!-- /分类标题 -->
+            <div class="form-container">
+                <div class="form-group">
+                    <label>原密码</label>
+                    <input type="password" class="form-control" placeholder="请输入原密码" v-model="npwd">
+                </div>
+                <div class="form-group">
+                    <label>新密码</label>
+                    <input type="password" class="form-control" placeholder="请输入新密码" v-model="pwd">
+                </div>
+                <div class="form-group">
+                    <label>再次输入新密码</label>
+                    <input type="password" class="form-control" placeholder="确认新密码" v-model="pwd1">
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" @click.prevent="editpw">
+                </div>
+            </div><!--form-->
+        </div>
+    </div>
+</div>
+<!-- /主体内容 -->
+<script src="/lib/jquery/dist/jquery.min.js"></script>
+<script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/lib/Vue/axios.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/lib/qs/qs.js"></script>
+<script type="text/javascript">
+    var vm=new Vue({
+        el:"#user-add",
+        data:{
+            err:"",
+            username:"",
+            npwd:"",
+            pwd:"",
+            pwd1:"",
+            loginName:"登录用户名",
+        },
+        methods:{
+
+            //找到当前登录管理员姓名
+            findAll:function(){
+                this.loginName=localStorage.getItem("loginName");
+            },
+            editpw:function() {
+                var qs = Qs;
+                if (this.pwd == "") {
+                    this.err = "未输入密码";
+                    return false;
+                }else if (this.pwd != this.pwd1) {
+                    this.err = "确认密码不一致";
+                    return false;
+                }
+                axios.post('/User_updatepw',qs.stringify({
+                    npwd:this.npwd,
+                    pwd:this.pwd,
+                    pwd1:this.pwd1
+                })).then(res=>{
+                    alert(res.data);
+                }).catch(err=>{
+                    alert(err);
+                })
+            }
+        },
+        created(){
+            this.findAll();
+        }
+    })
+</script>
+</body>
+
+</html>

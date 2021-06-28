@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>审核使用</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="property-form">
+	<!-- 头部 -->
+    <div class="header">
+    <!-- 网站标志 -->
+        <div class="logo fl">
+			基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+					{{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="User_Message">个人资料</a></li>
+					<li><a href="/U_editpw">修改密码</a></li>
+					<li><a href="User_signout">退出登录</a></li>
+				</ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+    	<!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="auditing-look.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		审批申请
+                	</a>
+                </li>
+                <li>
+                    <a class="item" href="buy-apply.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		购入申请
+                	</a>
+                </li>
+                <li>
+                    <a class="item active" href="property-admin.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		资产信息查询
+                	</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+        	<!-- 分类标题 -->
+            <div class ="sort-title"style="padding-bottom: 6px;">
+                <h4 style="font-weight: 200;display: inline-block;">历史记录</h4>
+				
+            </div>
+            <!-- /分类标题 -->
+			
+			<!--资产历史记录-->
+			<div class="find-menu1" style="margin-top: 20px;">
+				<img src="images/nav.png"/>
+				<span style="font-weight: 400;">购买模块(您已提交)</span>
+			</div>
+			<table class="table" >
+				<thead>
+					<th style="text-align: center;">表单编号</th>
+					<th style="text-align: center;">货物名称</th>
+					<th style="text-align: center;">申请数量</th>
+					<th style="text-align: center;">申请金额</th>
+					<th style="text-align: center;">申请人</th>
+					<th style="text-align: center;">申请状态</th>
+				</thead>
+				<tbody>
+					<tr v-for="apply in applys" style="text-align: center;">
+						<td>{{apply.formId}}</td>
+						<td>{{apply.name}}</td>
+						<td>{{apply.Num}}</td>
+						<td>{{apply.price}}</td>
+						<td>{{apply.aname}}</td>
+						<td>{{apply.state}}</td>
+					</tr>
+					
+				</tbody>
+			</table>
+			<!--资产历史记录结束-->
+			<div style="margin-top: 30px;">说明：当前资产不可进行操作，只供查看</div>
+        </div>
+		
+    </div>
+	</div>
+    <!-- /主体内容 -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./lib/Vue/axios.js"></script>
+	<script src="./js/vue.js"></script>
+	<script src="./lib/qs/qs.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#property-form",
+			data:{
+				loginName:"",
+				applys:[{formId:"12203238",name:"笔记本电脑",Num:"33",price:"30000",type:"实体资产",aname:"张三",state:"待审核"}]
+			},
+			methods:{
+				//初始页面信息
+				findAll:function(){
+					this.loginName=localStorage.getItem("loginName");
+					axios.post('property/form',{}).then(res=>{
+						this.applys=res.data;
+					}).catch(err=>{
+						
+					})
+				},
+				
+				},
+			
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>

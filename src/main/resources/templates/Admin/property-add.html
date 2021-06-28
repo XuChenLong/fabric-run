@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>录入资产</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+	<div id="property-add">
+	<!-- 头部 -->
+    <div class="header">
+    	<!-- 网站标志 -->
+        <div class="logo fl">
+			基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+					{{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="Admin_Message">个人资料</a></li>
+					<li><a href="/A_editpw">修改密码</a></li>
+					<li><a href="Admin_signout">退出登录</a></li>
+				</ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+    	<!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="Adminindex">
+						<span class="glyphicon glyphicon-user"></span>
+						租借管理
+					</a>
+                </li>
+				<li>
+				    <a class="item active" href="Admin_property_add">
+						<span class="glyphicon glyphicon-th-list"></span>
+						资产录入
+					</a>
+				</li>
+				<li>
+				    <a class="item" href="Admin_apply_look">
+						<span class="glyphicon glyphicon-th-list"></span>
+						审批申请
+					</a>
+				</li>
+				<li>
+				    <a  class="item" href="Admin_property">
+						<span class="glyphicon glyphicon-th-list"></span>
+						资产信息管理
+					</a>
+				</li>
+            </ul>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+        	<!-- 分类标题 -->
+            <div class ="sort-title" style="padding-bottom: 6px;">
+                <h4 style="font-weight: 200;display: inline-block;">资产信息管理模块</h4>
+				<div class="aside-tab">
+						<a @click="add" id="add" data-toggle="modal" data-target=".confirm-modal">录入</a>
+						<a href="Admin_property">取消</a>
+				</div>
+            </div>
+            <!-- /分类标题 -->
+			<div>
+				<table class="table property-add">
+					<tbody>
+						<tr>
+							<th>资产编号：</th>
+							<td><input type="text" v-model="id" /></td>
+						</tr>
+						<tr>
+							<th>资产名称：</th>
+							<td><input type="text" v-model="name" /> </td>
+						</tr>
+						<tr>
+							<th>资产数量：</th>
+							<td><input type="text" v-model="num" /></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div style="margin-top: 30px;">说明：点击【资产】的【查询资产】，根据页面条件查询资产的库存信息，通过左侧【我的资产】就可以了解到属于自己负责的资产情况</div>
+        </div>
+		
+    </div>
+	<!-- <div class="modal fade confirm-modal">
+	    <div class="modal-dialog modal-lg">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+	                <h4 class="modal-title">请确认</h4>
+	            </div>
+	            <div class="modal-body">
+	                <p>您确定录入当前资产信息吗？</p>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	                <input type="button" class="btn btn-primary" @click="Submit" value="确认">
+	            </div>
+	        </div>
+	    </div>
+	</div> -->
+	</div>
+    <!-- /主体内容 -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/lib/Vue/axios.js"></script>
+	<script src="/js/vue.js"></script>
+	<script src="/lib/qs/qs.js"></script>
+	<script type="text/javascript">
+		//var a=document.getElementById('add');
+		var vm=new Vue({
+			el:"#property-add",
+			data:{
+				loginName:"",
+				id:"",
+				name:"",
+				num:""
+			},
+			methods:{
+				//初始页面信息
+				findAll:function(){
+					this.loginName=localStorage.getItem("loginName");
+				},
+				//添加资产信息
+				add:function(){
+					var qs=Qs;
+					if(this.id==""||this.name==""||this.num==""){
+						alert("请输入完整信息！");
+					}else{
+						
+						axios.post('/property/add',qs.stringify({
+							//若考虑编号自动生成，可删去id(这是资产编号)
+							id:this.id,
+							name:this.name,
+							num:this.num
+						})).then(res=>{
+							alert("录入成功！");
+							window.location.href="/Admin_property_add"
+						}).catch(err=>{
+							alert('录入失败！出现问题');
+						})
+					}
+				}
+			},
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>登录用户信息界面</title>
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+	<div id="user-look">
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        <div class="logo fl">
+            <div class="logo fl">
+                基于区块链的资产管理系统
+            </div>
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+                     {{loginName}}
+                    <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="User_Message">个人资料</a></li>
+                    <li><a href="/U_editpw">修改密码</a></li>
+                    <li><a href="User_signout">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <!-- 	侧边栏-->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="Userindex">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        当前申请
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="User_apply">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        租用申请
+                    </a>
+                </li>
+                <li>
+                    <a class="item" href="User_property_look">
+                        <span class="glyphicon glyphicon-th-list"></span>
+                        资产信息查询
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4>{{loginName}}</h4>
+            </div>
+            <!-- /分类标题 -->
+            <div class="form-container">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" v-model="loginName" disabled="disabled">
+                </div>
+                <div class="form-group">
+                    <label>角色</label>
+                    <input type="text" class="form-control"  v-model="role" disabled="disabled">
+                </div>
+                <div class="form-group">
+                    <label>状态</label>
+                    <input type="text" class="form-control"  v-model="state" disabled="disabled">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+	</div>
+    <!-- /主体内容 -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/lib/Vue/axios.js"></script>
+	<script src="/js/vue.js"></script>
+	<script src="/lib/qs/qs.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#user-look",
+			data:{
+				role:"",
+				state:"",
+				loginName:"登录用户名"
+			},
+			methods:{
+				
+				//找到当前登录管理员姓名
+				findAll:function(){
+					this.loginName=localStorage.getItem("loginName");
+					axios.post('users/mes',{
+						loginName:this.loginName
+					}).then(res=>{
+						this.role="用户";
+						this.state=res.data.state;
+					}).catch(err=>{})
+				}
+			},
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>

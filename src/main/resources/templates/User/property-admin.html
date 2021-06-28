@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>审核使用</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="property-admin">
+	<!-- 头部 -->
+    <div class="header">
+    	<!-- 网站标志 -->
+        <div class="logo fl">
+			基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+					{{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="User_Message">个人资料</a></li>
+					<li><a href="/U_editpw">修改密码</a></li>
+					<li><a href="User_signout">退出登录</a></li>
+				</ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+    	<!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="Userindex">
+                		<span class="glyphicon glyphicon-th-list"></span>
+						当前申请
+                	</a>
+                </li>
+                <li>
+                    <a class="item" href="User_apply">
+                		<span class="glyphicon glyphicon-th-list"></span>
+						租用申请
+                	</a>
+                </li>
+                <li>
+                    <a class="item active" href="User_property_look">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		资产信息查询
+                	</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+        	<!-- 分类标题 -->
+            <div class ="sort-title"style="padding-bottom: 6px;">
+                <h4 style="font-weight: 200;display: inline-block;">资产信息管理模块</h4>
+				<div class="aside-tab">
+						<a @click="search" href="#">搜索</a>
+						<a href="User_property_look">重置</a>
+				</div>
+            </div>
+            <!-- /分类标题 -->
+			<!--搜索条件框-->
+			<div class="find-menu1" style="margin-top: 5px;">
+				<img src="images/nav.png"/>
+			</div>
+			<!--搜索条件框-->
+			<!--搜索内容-->
+			<div class="find-menu2" >
+				<table class="table">
+					<tr>
+						<th style="font-size : 14px;">管理员（必选）:</th><td>
+						<select id="sel" class="selectpicker" title="请选择管理员" v-model="aname" @change="getvaluemethod($event)" style=" width: 180px;">
+						</select>
+						<th style="font-size : 14px;">库存状态:</th>
+						<td>
+							<select id="selstate" class="selectpicker" title="请选择当前状态" v-model="state" style=" width: 180px;">
+								<option value="true">有库存</option>
+								<option value="false">无库存</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th style="font-size : 14px;">资产编号:</th>
+						<td><input v-model="pid" type="text" style="width: 180px;"/></td>
+						<th style="font-size : 14px;">资产名称:</th>
+						<td><input v-model="pname" type="text" style="width: 180px;"/></td>
+					</tr>
+				</table>
+			</div>
+			<!--搜索内容-->
+			<div style="margin-top: 30px;">说明：使用资产搜索时，必须选择申请的管理员对象，其他的则可以选填</div>
+        </div>
+		
+    </div>
+	</div>
+    <!-- /主体内容 -->
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/lib/Vue/axios.js"></script>
+	<script src="/js/vue.js"></script>
+	<script src="/lib/qs/qs.js"></script>
+	<script src="js/bootstrap-select.min.js"></script>
+	<link href="css/bootstrap-select.min.css" rel="stylesheet">
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#property-admin",
+			data:{
+				anames:[],
+				aname:"",
+				state:"",
+				pid:"",
+				pname:"",
+				value:""
+			},
+			methods:{
+				getvaluemethod: function(event) {
+					this.value = event.target.value;
+				},
+				//初始页面信息
+				findAll:function(){
+					this.loginName=localStorage.getItem("loginName");
+					axios.post('/findAdmin',{
+
+					}).then(res=>{
+						this.anames = res.data;
+						var str = "";
+						for ( index in this.anames) {
+							str += '<option value='+index+'>' + this.anames[index][1] + '</option>'
+						}
+						$('#sel').html(str);
+						$('#sel').selectpicker('refresh');
+					})
+				},
+				//搜索按钮
+				search:function(){
+					if(this.aname === "") {
+						alert("请选择管理员");
+						return;
+					}
+					window.location.href="/User_property_Mess?name="+this.anames[this.value][0]+"&pid="+this.pid+"&pname="+this.pname+"&state="+this.state;
+				},
+				//寻找登录用户的历史记录/普通为提交过的订单/资产租用信息
+				searchHistory:function(){
+					axios.post('searchMess',{
+						loginName:this.loginName
+					}).then(res=>{
+						window.location.href="http://127.0.0.1:3000/code10.16/public/property-form.html"
+					}).catch(err=>{
+						
+					})
+				}
+			},
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>

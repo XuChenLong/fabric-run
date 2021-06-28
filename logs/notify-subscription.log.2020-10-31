@@ -1,0 +1,50 @@
+2020-10-31 23:19:55,846 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:19:57,391 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-10-31 23:20:04,230 - peer0.org1.example.com installed sucess
+2020-10-31 23:20:04,230 - peer1.org1.example.com installed sucess
+2020-10-31 23:20:34,483 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:20:36,096 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-10-31 23:20:38,776 - peer0.org1.example.com installed sucess
+2020-10-31 23:20:38,776 - peer1.org1.example.com installed sucess
+2020-10-31 23:20:58,464 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:21:02,919 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:21:37,934 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a459d223a52dfe63f693cad8095086cb49b578e04066e2a876e7dfb0ee12a82c to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:93)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-10-31 23:21:37,940 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a459d223a52dfe63f693cad8095086cb49b578e04066e2a876e7dfb0ee12a82c to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-10-31 23:21:44,682 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:21:49,654 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:22:24,672 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 1171eb3b9aff7fdaef60be1f91c25c63507ee2855db9db155a96b1c96db9e2f5 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:93)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-10-31 23:22:24,676 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 1171eb3b9aff7fdaef60be1f91c25c63507ee2855db9db155a96b1c96db9e2f5 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-10-31 23:23:03,159 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:23:07,312 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:23:07,568 - peer0.org1.example.com init sucess
+2020-10-31 23:23:26,411 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:23:31,262 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:23:31,459 - chaincode with name 'goodsInfo' already exists init fail
+2020-10-31 23:23:53,716 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:23:58,547 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:24:33,559 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 8f0d2594dd5ed8ba9496e66cb49e8e51d6658756da2d562e52cc5650e3323e1b to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:93)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-10-31 23:24:33,563 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 8f0d2594dd5ed8ba9496e66cb49e8e51d6658756da2d562e52cc5650e3323e1b to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-10-31 23:24:39,319 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-10-31 23:24:46,053 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-10-31 23:25:08,219 - peer0.org1.example.com init sucess

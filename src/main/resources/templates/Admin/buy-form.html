@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>普通用户界面</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="buy-admin">
+	<!-- 头部 -->
+    <div class="header">
+    	<!-- 网站标志 -->
+        <div class="logo fl">
+			基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+				   {{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="Admin_Message">个人资料</a></li>
+					<li><a href="/A_editpw">修改密码</a></li>
+					<li><a href="Admin_signout">退出登录</a></li>
+				</ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+   <!-- 	侧边栏-->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item active" href="user.html">
+						<span class="glyphicon glyphicon-user"></span>
+						租借管理
+					</a>
+                </li>
+                <li>
+                    <a class="item" href="auditing-use.html">
+			  			<span class="glyphicon glyphicon-th-list"></span>
+			  			审批使用
+			  		</a>
+                </li>
+				<li>
+				    <a class="item" href="buy-admin.html">
+						<span class="glyphicon glyphicon-th-list"></span>
+						购入申请
+					</a>
+				</li>
+				<li>
+				    <a class="item" href="property-admin.html">
+						<span class="glyphicon glyphicon-th-list"></span>
+						资产信息管理
+					</a>
+				</li>
+            </ul>
+        </div>
+        <!-- 侧边栏 --> 
+        <div class="main">
+			<!--分页内容 -->
+			<!-- 分类标题 -->
+			<div class ="title" style="border-bottom: 1px solid #999999;
+			padding-bottom: 10px;
+			">
+			    <h4 style="display: inline-block;">xxx设备购买申请流程</h4>
+				<div class="aside-tab">
+						<a @click="allow" href="#">批准</a>
+						<a href="#">退回</a>
+				</div>
+			</div>
+			<!-- /分类标题 -->
+			<table class="apply-tab table">
+			    <thead>
+			        <tr>
+			            <th>申请表单编号：</th>
+						<td>{{apply.id}}</td>
+			        </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+					  <th>申请人：</th>
+					  <td>{{apply.name}}</td>
+				  </tr>
+				  <tr>
+				  	  <th>申请日期：</th>
+				  	  <td>{{apply.date}}</td>
+				  </tr>
+				  <!-- <tr>
+				  	  <th>申请部门：</th>
+				  	  <td>理科03实验中心</td>
+				  </tr> -->
+				  <tr>
+				  	  <th>资产类型：</th>
+				  	  <td>{{apply.type}}</td>
+				  </tr>
+				  <tr>
+				  	  <th>总价：</th>
+				  	  <td>{{apply.price}}</td>
+				  </tr>
+				  <tr>
+				  	  <th>状态：</th>
+				  	  <td>{{apply.state}}</td>
+				  </tr>
+				  <tr>
+					  <th>审批人：</th>
+					  <td><input type="text" v-model="AdminName" /></td>
+				  </tr>
+			    </tbody>
+			</table>
+			
+			<!-- <div class="tab-admin">
+				<button>A-添加</button>
+				<button>D-删除</button>
+			</div>
+			<table class=" apply-tab-sub">
+				<thead>
+					<tr>
+					    <th>物品名单</th>
+					    <th>单价</th>
+					    <th>数量</th>
+					    <th>合计</th>
+					    <th>备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><input type="checkbox">笔记本电脑</td>
+						<td><input type="text" value="4000.00" /></td>
+						<td><input type="text" value="5.00" /></td>
+						<td><input type="text" value="20000.00" /></td>
+						<td><input type="text" value="给予批准" /></td>
+					</tr>
+					<tr>
+						<td>合计</td>
+						<td></td>
+						<td></td>
+						<td  style="color: red;">20000.00</td>
+						<td></td>
+					</tr>
+				</tbody>
+				
+			</table> -->
+			<div class="explain">说明：点击【批准】可完成当前表单的审核，或改选其它选项</div>
+			<!--分页内容 -->
+			<!-- 分页 -->
+			<ul class="pagination">
+			    <li>
+			        <a href="#">
+			        <span>&laquo;</span>
+			      </a>
+			    </li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li>
+			        <a href="#">
+			        <span>&raquo;</span>
+			      </a>
+			    </li>
+			</ul>
+			<!-- /分页 -->
+        </div>
+    </div>
+	</div>
+    <!-- /主体内容 -->
+
+    
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./lib/Vue/axios.js"></script>
+	<script src="./js/vue.js"></script>
+	<script src="./lib/qs/qs.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#buy-admin",
+			data:{
+				apply:{},
+				loginName:"",
+				AdminName:""
+			},
+			methods:{
+				
+				allow:function(){
+					var qs=Qs;
+				if(this.AdminName==""){
+					alert("请输入审批人姓名！");
+				}else{
+					axios.post('buy/allow',qs.stringify({
+						id:this.apply.id,
+						AdminName:this.AdminName
+					})).then(res=>{
+						alert("审批完成！");
+						window.location.href="http://127.0.0.1:3000/code10.16/public/buy-admin.html"
+					}).catch(err=>{
+						alert("表单提交失败!");
+					})
+				}
+			},
+			findAll:function(){
+				//获取登录用户名
+				this.loginName=localStorage.getItem("loginName");
+				//获取该编号的表单数据
+				axios.post('buy/apply',{}).then(res=>{
+					this.apply=res.data;
+					
+				}).catch(err=>{
+					
+				})
+			}
+	},
+	created(){
+		this.findAll();
+	}
+	})</script>
+</body>
+
+</html>

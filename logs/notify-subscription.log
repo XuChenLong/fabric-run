@@ -1,0 +1,398 @@
+2020-11-03 18:35:52,058 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:35:55,469 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:35:55,535 - cannot get package for chaincode (goodsInfo:1.0) init fail
+2020-11-03 18:36:11,546 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:36:12,148 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-03 18:36:14,152 - peer0.org1.example.com installed sucess
+2020-11-03 18:36:14,152 - peer1.org1.example.com installed sucess
+2020-11-03 18:36:58,467 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:36:59,071 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-11-03 18:37:00,565 - peer0.org1.example.com installed sucess
+2020-11-03 18:37:00,565 - peer1.org1.example.com installed sucess
+2020-11-03 18:37:14,332 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:37:16,531 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:37:51,541 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 00bebe6a6cbcf47cdaa377ce2b2761c9e8d8cf5fc654419052c0fa1670cbd399 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 18:37:51,549 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 00bebe6a6cbcf47cdaa377ce2b2761c9e8d8cf5fc654419052c0fa1670cbd399 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 18:38:05,795 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:38:09,096 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:38:26,927 - peer0.org1.example.com init sucess
+2020-11-03 18:38:48,270 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:38:50,207 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:39:25,216 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction fd286f76367d5f1b676e0da325aac22adaec6adb27febd82b5c78e3b94d9466f to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 18:39:25,219 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction fd286f76367d5f1b676e0da325aac22adaec6adb27febd82b5c78e3b94d9466f to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 18:39:57,237 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:39:59,277 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:39:59,463 - peer0.org1.example.com init sucess
+2020-11-03 18:41:37,787 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:41:37,793 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 18:41:41,073 - Channel Channel{id: 2, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 18:41:43,059 - data is <ByteString@41925502 size=23>
+2020-11-03 18:41:43,089 - CA Name: , Version: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVVENDQWZpZ0F3SUJBZ0lSQVA4aTJ1TmVLRDZnUlAva1JGbEZxeWd3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpJdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaekl1WlhoaGJYQnNaUzVqYjIwd0hoY05NakF3TnpNeE1EazFNekF3V2hjTk16QXdOekk1TURrMU16QXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NaTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk1pNWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkIzVGhCbWJLS0w2OUt2UVlEWHQ0bW1Xb05JeGk2c096WjFoRkVMMDVhK2ZmbkpHb1FXeXVBM2FNWnhNUEo3aApzOExSVFdNUWI0bi9XVGNqcWRaU3hUbWpiVEJyTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVCkJnZ3JCZ0VGQlFjREFnWUlLd1lCQlFVSEF3RXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWcKb2ZOZloxVFQyS2s0L3NvRWZ1a3RMTkFsaytSdWhMZWJhYXBFTEJ1bFltY3dDZ1lJS29aSXpqMEVBd0lEUndBdwpSQUlnVnFQeFEwbEIzSk12eGJOZUhaL3I3dzU4SDFmejNxTFZmb2xWdjdFSDlPd0NJRVJIK2I3L0dYV1UxUlQ1CnRGL1pFa0FjLzBoTkpCeTk2MDRLWjBWMWNsN1MKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=, issuerPublicKey: CgJPVQoEUm9sZQoMRW5yb2xsbWVudElEChBSZXZvY2F0aW9uSGFuZGxlEkQKICQCf7cmys5VmWlInWGYmHViFj9llKG/UR56E5sWazKhEiDE/ri9PyUfHHbNpbemVt8VP3gKxDckyAP+xf0Hw2MHbxpECiBPeSeYh7VcTMgK/GeNgKq/9XhLUwsGTwQWiHUbJKQXwxIgTQQPh+XTVsiNrxRJgqzWbKYbySMhsymDFxzXnTw30EsiRAogaUSM1/pRhSGRJdNcRudyMqI1r6jm46Mw77iwoeLNtkMSICVZQO4vKI0LxmhMrV5asJTps4hL5ftdTLyryeqTMUOkIkQKIF8MtJAqfzLoxvk1x6eUi+BuM8tJ3PHNkPseHJDINqvaEiDmD424sZuLwH8YyPB67+QcY5X73lmepq/nyMbqgeEncyJECiDoHmunXPO4oCmuL6g+TydwiTImXWCrRAjfkHW4sm2gcxIgXAzCJBNxQcxAnrI3Lisr7GED4gMRQaRAvdU/HILtE0YiRAogd4dVSV6vDq1Y8dLVPwaiXF+wuoKCiE3zhsnbZ9g1pCISIAuJajZwUfBK3SVc5BicaKmhb+JmKCXWUu/cf5OyFkeGKogBCiCUU9fn5Ofh2etJGUjqI6tr1t8tZBzkk/LH6uFFSCKhihIg5yJyqy+y8wXHQ2FBk+5UzfcmlE8PHZ3/4RuwOWSbG2QaIHUJoIPrq9/YhkW1pPqqpBgaHQQVy/DaXe9VO2UuUn5TIiAUbqDWjkiYleb5cgtSkyrSwkgi1pv029JrI6xytKfY0DJECiAXY9hER5BmI/sVl8bHooOtsq6ySogzc8uiFmZSQ8ZLExIgJQbAhQivDfuFKu4AkaQ+coH7gHMYILGmVCLjLZ6hgVY6RAog7sWTngcctXR2w1ByeVYGznA8dG1nHP2poQFunI8OVBcSIFku1QA8H/sZpZHHDbWhZVb1S900fQKW44F/+YZvV8k+QiAEo+P1BtjYI5Q3YuugSYbGlGZZNgx/NSqg1iNxsiQ/q0ogDAKdRVlK/8h1kVggjbOQEy4KJxC4Ai4nWuKSn+NAfCxSIKLkL7Gaq2iOeoAhgNpTIfJTlHxU6HOXDbRY4oJonZ7k, issuerRevocationPublicKey: LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUhZd0VBWUhLb1pJemowQ0FRWUZLNEVFQUNJRFlnQUU1QUdzekJGM3FBeEwvbmk1SktESklwRlhOTnRrOEJMeQpSVGVqTlBNT0hyVFgyei9tT0ovUFlyM2VZN1V1TTlNNEN2Ymw2KzFpSkF0L2VocGtyUHFRYlluaGFad3NDaWZlCmhHaHg1QzM1VGV0bG1ORmpWTUpMUTMxd2FLSFdOUDg3Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=
+2020-11-03 18:41:43,090 - CA Version: 1.4.0
+2020-11-03 18:41:43,305 - peer0.org1.example.com invoke proposal create sucess
+2020-11-03 21:55:37,724 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:55:38,592 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-11-03 21:55:50,309 - Channel Channel{id: 3, name: } Sending proposal with transaction: e9a363574fd733f3244787a8ed8459ec3225ab3595fde86e257258af4164c9c6 to Peer{ id: 1, name: peer0.org1.example.com, channelName: null, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.sendInstallProposal(Channel.java:2589)
+	at org.hyperledger.fabric.sdk.HFClient.sendInstallProposal(HFClient.java:666)
+	at cn.com.fabric.sdk.FabricClient.installChaincode(FabricClient.java:73)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:79)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+2020-11-03 21:55:50,312 - Channel Channel{id: 3, name: } Sending proposal with transaction: e9a363574fd733f3244787a8ed8459ec3225ab3595fde86e257258af4164c9c6 to Peer{ id: 2, name: peer1.org1.example.com, channelName: null, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.sendInstallProposal(Channel.java:2589)
+	at org.hyperledger.fabric.sdk.HFClient.sendInstallProposal(HFClient.java:666)
+	at cn.com.fabric.sdk.FabricClient.installChaincode(FabricClient.java:73)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:79)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+2020-11-03 21:55:50,316 - Channel Channel{id: 3, name: } Sending proposal with transaction: e9a363574fd733f3244787a8ed8459ec3225ab3595fde86e257258af4164c9c6 to Peer{ id: 1, name: peer0.org1.example.com, channelName: null, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+} installed fail
+2020-11-03 21:55:50,316 - Channel Channel{id: 3, name: } Sending proposal with transaction: e9a363574fd733f3244787a8ed8459ec3225ab3595fde86e257258af4164c9c6 to Peer{ id: 2, name: peer1.org1.example.com, channelName: null, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+} installed fail
+2020-11-03 21:56:06,425 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:56:07,008 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-11-03 21:56:18,375 - Channel Channel{id: 3, name: } Sending proposal with transaction: a55b65ce927fbdb816a23f48a9c95dfdaad2a87c0accb78dbd5feca39a41db14 to Peer{ id: 1, name: peer0.org1.example.com, channelName: null, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNKNOWN, description=channel closed, cause=java.nio.channels.ClosedChannelException
+	at io.grpc.netty.Utils.statusFromThrowable(Utils.java:168)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:266)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:260)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424)
+	at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:112)
+	at io.netty.channel.DefaultChannelPromise.setFailure(DefaultChannelPromise.java:89)
+	at io.grpc.netty.ProtocolNegotiators$AbstractBufferingHandler.fail(ProtocolNegotiators.java:595)
+	at io.grpc.netty.ProtocolNegotiators$BufferUntilTlsNegotiatedHandler.userEventTriggered(ProtocolNegotiators.java:692)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:329)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:315)
+	at io.netty.channel.AbstractChannelHandlerContext.fireUserEventTriggered(AbstractChannelHandlerContext.java:307)
+	at io.netty.handler.ssl.SslUtils.handleHandshakeFailure(SslUtils.java:319)
+	at io.netty.handler.ssl.SslHandler.setHandshakeFailure(SslHandler.java:1573)
+	at io.netty.handler.ssl.SslHandler.channelInactive(SslHandler.java:1045)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:947)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:822)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.nio.channels.ClosedChannelException
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source)
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNKNOWN: channel closed
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.sendInstallProposal(Channel.java:2589)
+	at org.hyperledger.fabric.sdk.HFClient.sendInstallProposal(HFClient.java:666)
+	at cn.com.fabric.sdk.FabricClient.installChaincode(FabricClient.java:73)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:79)
+Caused by: io.grpc.StatusRuntimeException: UNKNOWN: channel closed
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.nio.channels.ClosedChannelException
+	at io.grpc.netty.Utils.statusFromThrowable(Utils.java:168)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:266)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:260)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424)
+	at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:112)
+	at io.netty.channel.DefaultChannelPromise.setFailure(DefaultChannelPromise.java:89)
+	at io.grpc.netty.ProtocolNegotiators$AbstractBufferingHandler.fail(ProtocolNegotiators.java:595)
+	at io.grpc.netty.ProtocolNegotiators$BufferUntilTlsNegotiatedHandler.userEventTriggered(ProtocolNegotiators.java:692)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:329)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:315)
+	at io.netty.channel.AbstractChannelHandlerContext.fireUserEventTriggered(AbstractChannelHandlerContext.java:307)
+	at io.netty.handler.ssl.SslUtils.handleHandshakeFailure(SslUtils.java:319)
+	at io.netty.handler.ssl.SslHandler.setHandshakeFailure(SslHandler.java:1573)
+	at io.netty.handler.ssl.SslHandler.channelInactive(SslHandler.java:1045)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:947)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:822)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+Caused by: java.nio.channels.ClosedChannelException
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source)
+2020-11-03 21:56:18,713 - Channel Channel{id: 3, name: } Sending proposal with transaction: a55b65ce927fbdb816a23f48a9c95dfdaad2a87c0accb78dbd5feca39a41db14 to Peer{ id: 2, name: peer1.org1.example.com, channelName: null, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+}
+java.lang.Exception: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4140)
+	at org.hyperledger.fabric.sdk.Channel.sendInstallProposal(Channel.java:2589)
+	at org.hyperledger.fabric.sdk.HFClient.sendInstallProposal(HFClient.java:666)
+	at cn.com.fabric.sdk.FabricClient.installChaincode(FabricClient.java:73)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:79)
+Caused by: io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+	at io.grpc.Status.asRuntimeException(Status.java:530)
+	at io.grpc.stub.ClientCalls$UnaryStreamToFuture.onClose(ClientCalls.java:482)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusStatsModule$StatsClientInterceptor$1$1.onClose(CensusStatsModule.java:694)
+	at io.grpc.PartialForwardingClientCallListener.onClose(PartialForwardingClientCallListener.java:39)
+	at io.grpc.ForwardingClientCallListener.onClose(ForwardingClientCallListener.java:23)
+	at io.grpc.ForwardingClientCallListener$SimpleForwardingClientCallListener.onClose(ForwardingClientCallListener.java:40)
+	at io.grpc.internal.CensusTracingModule$TracingClientInterceptor$1$1.onClose(CensusTracingModule.java:397)
+	at io.grpc.internal.ClientCallImpl.closeObserver(ClientCallImpl.java:459)
+	at io.grpc.internal.ClientCallImpl.access$300(ClientCallImpl.java:63)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.close(ClientCallImpl.java:546)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl.access$600(ClientCallImpl.java:467)
+	at io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed.runInContext(ClientCallImpl.java:584)
+	at io.grpc.internal.ContextRunnable.run(ContextRunnable.java:37)
+	at io.grpc.internal.SerializingExecutor.run(SerializingExecutor.java:123)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+2020-11-03 21:56:18,716 - Channel Channel{id: 3, name: } Sending proposal with transaction: a55b65ce927fbdb816a23f48a9c95dfdaad2a87c0accb78dbd5feca39a41db14 to Peer{ id: 1, name: peer0.org1.example.com, channelName: null, url: grpcs://peer0.org1.example.com:7051} failed because of: gRPC failure=Status{code=UNKNOWN, description=channel closed, cause=java.nio.channels.ClosedChannelException
+	at io.grpc.netty.Utils.statusFromThrowable(Utils.java:168)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:266)
+	at io.grpc.netty.NettyClientTransport$5.operationComplete(NettyClientTransport.java:260)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:511)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:485)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:424)
+	at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:112)
+	at io.netty.channel.DefaultChannelPromise.setFailure(DefaultChannelPromise.java:89)
+	at io.grpc.netty.ProtocolNegotiators$AbstractBufferingHandler.fail(ProtocolNegotiators.java:595)
+	at io.grpc.netty.ProtocolNegotiators$BufferUntilTlsNegotiatedHandler.userEventTriggered(ProtocolNegotiators.java:692)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:329)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeUserEventTriggered(AbstractChannelHandlerContext.java:315)
+	at io.netty.channel.AbstractChannelHandlerContext.fireUserEventTriggered(AbstractChannelHandlerContext.java:307)
+	at io.netty.handler.ssl.SslUtils.handleHandshakeFailure(SslUtils.java:319)
+	at io.netty.handler.ssl.SslHandler.setHandshakeFailure(SslHandler.java:1573)
+	at io.netty.handler.ssl.SslHandler.channelInactive(SslHandler.java:1045)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:224)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1429)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:245)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:231)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:947)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$8.run(AbstractChannel.java:822)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:404)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:897)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.nio.channels.ClosedChannelException
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source)
+} installed fail
+2020-11-03 21:56:18,716 - Channel Channel{id: 3, name: } Sending proposal with transaction: a55b65ce927fbdb816a23f48a9c95dfdaad2a87c0accb78dbd5feca39a41db14 to Peer{ id: 2, name: peer1.org1.example.com, channelName: null, url: grpcs://peer1.org1.example.com:8051} failed because of: gRPC failure=Status{code=UNAVAILABLE, description=io exception, cause=javax.net.ssl.SSLException: handshake timed out
+	at io.netty.handler.ssl.SslHandler.handshake(...)(Unknown Source)
+} installed fail
+2020-11-03 21:56:48,105 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:56:48,710 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-11-03 21:57:09,485 - peer0.org1.example.com installed sucess
+2020-11-03 21:57:09,485 - peer1.org1.example.com installed sucess
+2020-11-03 21:57:28,502 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:57:29,214 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-03 21:57:34,498 - peer0.org1.example.com installed sucess
+2020-11-03 21:57:34,498 - peer1.org1.example.com installed sucess
+2020-11-03 21:57:52,773 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:57:55,800 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 21:58:30,819 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 5a1793a33b6c18bc68442dbdbb90e937fd21e66ef819aa0405d5f7ff3cee5504 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 21:58:30,821 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 5a1793a33b6c18bc68442dbdbb90e937fd21e66ef819aa0405d5f7ff3cee5504 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 21:58:36,093 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:58:38,674 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 21:59:13,686 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a15e6696e9d691a76fd922f83897bb8391409b4e1ab7a6f8bac5a5361a5c3b9d to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@dbd8e44[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@79517588, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@3a0baae5, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@7ac0e420}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 21:59:13,689 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a15e6696e9d691a76fd922f83897bb8391409b4e1ab7a6f8bac5a5361a5c3b9d to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 21:59:19,442 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 21:59:27,633 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 21:59:50,645 - peer0.org1.example.com init sucess
+2020-11-03 22:00:04,830 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:00:07,637 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:00:42,647 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 6c00ab846ceca00fac85ed9826b8acf001850d91f6b1b2f5a5a31ff61ad2c451 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@6436a7db[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@16fdec90, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1afdd473, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@40238dd0}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 22:00:42,650 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 6c00ab846ceca00fac85ed9826b8acf001850d91f6b1b2f5a5a31ff61ad2c451 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 22:01:32,876 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:01:35,371 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:01:35,666 - peer0.org1.example.com init sucess
+2020-11-03 22:02:57,676 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:02:57,684 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:03:01,677 - Channel Channel{id: 2, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:03:03,227 - data is <ByteString@3dddefd8 size=23>
+2020-11-03 22:03:03,261 - CA Name: , Version: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVVENDQWZpZ0F3SUJBZ0lSQVA4aTJ1TmVLRDZnUlAva1JGbEZxeWd3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpJdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaekl1WlhoaGJYQnNaUzVqYjIwd0hoY05NakF3TnpNeE1EazFNekF3V2hjTk16QXdOekk1TURrMU16QXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NaTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk1pNWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkIzVGhCbWJLS0w2OUt2UVlEWHQ0bW1Xb05JeGk2c096WjFoRkVMMDVhK2ZmbkpHb1FXeXVBM2FNWnhNUEo3aApzOExSVFdNUWI0bi9XVGNqcWRaU3hUbWpiVEJyTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVCkJnZ3JCZ0VGQlFjREFnWUlLd1lCQlFVSEF3RXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWcKb2ZOZloxVFQyS2s0L3NvRWZ1a3RMTkFsaytSdWhMZWJhYXBFTEJ1bFltY3dDZ1lJS29aSXpqMEVBd0lEUndBdwpSQUlnVnFQeFEwbEIzSk12eGJOZUhaL3I3dzU4SDFmejNxTFZmb2xWdjdFSDlPd0NJRVJIK2I3L0dYV1UxUlQ1CnRGL1pFa0FjLzBoTkpCeTk2MDRLWjBWMWNsN1MKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=, issuerPublicKey: CgJPVQoEUm9sZQoMRW5yb2xsbWVudElEChBSZXZvY2F0aW9uSGFuZGxlEkQKICQCf7cmys5VmWlInWGYmHViFj9llKG/UR56E5sWazKhEiDE/ri9PyUfHHbNpbemVt8VP3gKxDckyAP+xf0Hw2MHbxpECiBPeSeYh7VcTMgK/GeNgKq/9XhLUwsGTwQWiHUbJKQXwxIgTQQPh+XTVsiNrxRJgqzWbKYbySMhsymDFxzXnTw30EsiRAogaUSM1/pRhSGRJdNcRudyMqI1r6jm46Mw77iwoeLNtkMSICVZQO4vKI0LxmhMrV5asJTps4hL5ftdTLyryeqTMUOkIkQKIF8MtJAqfzLoxvk1x6eUi+BuM8tJ3PHNkPseHJDINqvaEiDmD424sZuLwH8YyPB67+QcY5X73lmepq/nyMbqgeEncyJECiDoHmunXPO4oCmuL6g+TydwiTImXWCrRAjfkHW4sm2gcxIgXAzCJBNxQcxAnrI3Lisr7GED4gMRQaRAvdU/HILtE0YiRAogd4dVSV6vDq1Y8dLVPwaiXF+wuoKCiE3zhsnbZ9g1pCISIAuJajZwUfBK3SVc5BicaKmhb+JmKCXWUu/cf5OyFkeGKogBCiCUU9fn5Ofh2etJGUjqI6tr1t8tZBzkk/LH6uFFSCKhihIg5yJyqy+y8wXHQ2FBk+5UzfcmlE8PHZ3/4RuwOWSbG2QaIHUJoIPrq9/YhkW1pPqqpBgaHQQVy/DaXe9VO2UuUn5TIiAUbqDWjkiYleb5cgtSkyrSwkgi1pv029JrI6xytKfY0DJECiAXY9hER5BmI/sVl8bHooOtsq6ySogzc8uiFmZSQ8ZLExIgJQbAhQivDfuFKu4AkaQ+coH7gHMYILGmVCLjLZ6hgVY6RAog7sWTngcctXR2w1ByeVYGznA8dG1nHP2poQFunI8OVBcSIFku1QA8H/sZpZHHDbWhZVb1S900fQKW44F/+YZvV8k+QiAEo+P1BtjYI5Q3YuugSYbGlGZZNgx/NSqg1iNxsiQ/q0ogDAKdRVlK/8h1kVggjbOQEy4KJxC4Ai4nWuKSn+NAfCxSIKLkL7Gaq2iOeoAhgNpTIfJTlHxU6HOXDbRY4oJonZ7k, issuerRevocationPublicKey: LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUhZd0VBWUhLb1pJemowQ0FRWUZLNEVFQUNJRFlnQUU1QUdzekJGM3FBeEwvbmk1SktESklwRlhOTnRrOEJMeQpSVGVqTlBNT0hyVFgyei9tT0ovUFlyM2VZN1V1TTlNNEN2Ymw2KzFpSkF0L2VocGtyUHFRYlluaGFad3NDaWZlCmhHaHg1QzM1VGV0bG1ORmpWTUpMUTMxd2FLSFdOUDg3Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=
+2020-11-03 22:03:03,262 - CA Version: 1.4.0
+2020-11-03 22:03:04,092 - peer0.org1.example.com invoke proposal create sucess
+2020-11-03 22:04:25,063 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:04:25,070 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:04:28,489 - Channel Channel{id: 2, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:04:28,782 - data is <ByteString@20011bf size=192>
+2020-11-03 22:08:07,927 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:08:08,555 - Installing 'goodsInfo::goodsInfo::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsInfo' with source location: 'src\goodsInfo'. chaincodePath:'goodsInfo'
+2020-11-03 22:08:10,544 - peer0.org1.example.com installed sucess
+2020-11-03 22:08:10,544 - peer1.org1.example.com installed sucess
+2020-11-03 22:15:43,200 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:15:46,243 - Installing 'goodsApply::goodsApply::1.0' language Go chaincode from directory: 'G:\chaincode\src\goodsApply' with source location: 'src\goodsApply'. chaincodePath:'goodsApply'
+2020-11-03 22:15:51,542 - peer0.org1.example.com installed sucess
+2020-11-03 22:15:51,542 - peer1.org1.example.com installed sucess
+2020-11-03 22:16:37,853 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:16:44,308 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:17:19,347 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a22e73d92cde2e6a572cc0f5bfe9b8dc1f61f43472a792143c8832c93bf6780f to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 22:17:19,385 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction a22e73d92cde2e6a572cc0f5bfe9b8dc1f61f43472a792143c8832c93bf6780f to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 22:24:02,480 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:24:12,196 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:24:15,035 - chaincode registration failed: timeout expired while starting chaincode goodsInfo:1.0 for transaction init fail
+2020-11-03 22:26:20,967 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:26:29,945 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:27:04,974 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 94f8bf180b3fd6146824b8cc468a722b3b96d6e281c91c15c26233a184436ac3 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 22:27:04,984 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction 94f8bf180b3fd6146824b8cc468a722b3b96d6e281c91c15c26233a184436ac3 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 22:28:00,714 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:28:09,006 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:28:44,040 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction bd47371eb13949ed22c832b359f707a24848978ea0c7ecdc0a4ca2885328ffd4 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration
+java.util.concurrent.TimeoutException: Waited 35000 milliseconds for io.grpc.stub.ClientCalls$GrpcFuture@42bc14c1[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=protos.Endorser/ProcessProposal, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6f3c660a, responseMarshaller=io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@74f5ce22, schemaDescriptor=org.hyperledger.fabric.protos.peer.EndorserGrpc$EndorserMethodDescriptorSupplier@25aca718}}}}}]]
+	at com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:471)
+	at org.hyperledger.fabric.sdk.Channel.sendProposalToPeers(Channel.java:4108)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2520)
+	at org.hyperledger.fabric.sdk.Channel.sendInstantiationProposal(Channel.java:2480)
+	at cn.com.fabric.sdk.FabricClient.initChaincode(FabricClient.java:94)
+	at cn.com.fabric.sdk.SdkMain.main(SdkMain.java:95)
+2020-11-03 22:28:44,064 - Channel Channel{id: 3, name: mychannel} sending proposal with transaction bd47371eb13949ed22c832b359f707a24848978ea0c7ecdc0a4ca2885328ffd4 to Peer{ id: 1, name: peer0.org1.example.com, channelName: mychannel, url: grpcs://peer0.org1.example.com:7051} failed because of timeout(35000 milliseconds) expiration init fail
+2020-11-03 22:30:09,081 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:30:17,408 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:30:17,888 - peer0.org1.example.com init sucess
+2020-11-03 22:37:57,924 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 22:38:04,602 - Channel Channel{id: 3, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 22:38:19,332 - peer0.org1.example.com init sucess
+2020-11-03 23:05:40,781 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 23:05:40,789 - Failed to load any configuration from: config.properties. Using toolkit defaults
+2020-11-03 23:05:44,121 - Channel Channel{id: 2, name: mychannel} eventThread started shutdown: false  thread: null 
+2020-11-03 23:05:49,389 - data is <ByteString@41925502 size=23>
+2020-11-03 23:05:49,457 - CA Name: , Version: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNVVENDQWZpZ0F3SUJBZ0lSQVA4aTJ1TmVLRDZnUlAva1JGbEZxeWd3Q2dZSUtvWkl6ajBFQXdJd2N6RUwKTUFrR0ExVUVCaE1DVlZNeEV6QVJCZ05WQkFnVENrTmhiR2xtYjNKdWFXRXhGakFVQmdOVkJBY1REVk5oYmlCRwpjbUZ1WTJselkyOHhHVEFYQmdOVkJBb1RFRzl5WnpJdVpYaGhiWEJzWlM1amIyMHhIREFhQmdOVkJBTVRFMk5oCkxtOXlaekl1WlhoaGJYQnNaUzVqYjIwd0hoY05NakF3TnpNeE1EazFNekF3V2hjTk16QXdOekk1TURrMU16QXcKV2pCek1Rc3dDUVlEVlFRR0V3SlZVekVUTUJFR0ExVUVDQk1LUTJGc2FXWnZjbTVwWVRFV01CUUdBMVVFQnhNTgpVMkZ1SUVaeVlXNWphWE5qYnpFWk1CY0dBMVVFQ2hNUWIzSm5NaTVsZUdGdGNHeGxMbU52YlRFY01Cb0dBMVVFCkF4TVRZMkV1YjNKbk1pNWxlR0Z0Y0d4bExtTnZiVEJaTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEEwSUEKQkIzVGhCbWJLS0w2OUt2UVlEWHQ0bW1Xb05JeGk2c096WjFoRkVMMDVhK2ZmbkpHb1FXeXVBM2FNWnhNUEo3aApzOExSVFdNUWI0bi9XVGNqcWRaU3hUbWpiVEJyTUE0R0ExVWREd0VCL3dRRUF3SUJwakFkQmdOVkhTVUVGakFVCkJnZ3JCZ0VGQlFjREFnWUlLd1lCQlFVSEF3RXdEd1lEVlIwVEFRSC9CQVV3QXdFQi96QXBCZ05WSFE0RUlnUWcKb2ZOZloxVFQyS2s0L3NvRWZ1a3RMTkFsaytSdWhMZWJhYXBFTEJ1bFltY3dDZ1lJS29aSXpqMEVBd0lEUndBdwpSQUlnVnFQeFEwbEIzSk12eGJOZUhaL3I3dzU4SDFmejNxTFZmb2xWdjdFSDlPd0NJRVJIK2I3L0dYV1UxUlQ1CnRGL1pFa0FjLzBoTkpCeTk2MDRLWjBWMWNsN1MKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=, issuerPublicKey: CgJPVQoEUm9sZQoMRW5yb2xsbWVudElEChBSZXZvY2F0aW9uSGFuZGxlEkQKICQCf7cmys5VmWlInWGYmHViFj9llKG/UR56E5sWazKhEiDE/ri9PyUfHHbNpbemVt8VP3gKxDckyAP+xf0Hw2MHbxpECiBPeSeYh7VcTMgK/GeNgKq/9XhLUwsGTwQWiHUbJKQXwxIgTQQPh+XTVsiNrxRJgqzWbKYbySMhsymDFxzXnTw30EsiRAogaUSM1/pRhSGRJdNcRudyMqI1r6jm46Mw77iwoeLNtkMSICVZQO4vKI0LxmhMrV5asJTps4hL5ftdTLyryeqTMUOkIkQKIF8MtJAqfzLoxvk1x6eUi+BuM8tJ3PHNkPseHJDINqvaEiDmD424sZuLwH8YyPB67+QcY5X73lmepq/nyMbqgeEncyJECiDoHmunXPO4oCmuL6g+TydwiTImXWCrRAjfkHW4sm2gcxIgXAzCJBNxQcxAnrI3Lisr7GED4gMRQaRAvdU/HILtE0YiRAogd4dVSV6vDq1Y8dLVPwaiXF+wuoKCiE3zhsnbZ9g1pCISIAuJajZwUfBK3SVc5BicaKmhb+JmKCXWUu/cf5OyFkeGKogBCiCUU9fn5Ofh2etJGUjqI6tr1t8tZBzkk/LH6uFFSCKhihIg5yJyqy+y8wXHQ2FBk+5UzfcmlE8PHZ3/4RuwOWSbG2QaIHUJoIPrq9/YhkW1pPqqpBgaHQQVy/DaXe9VO2UuUn5TIiAUbqDWjkiYleb5cgtSkyrSwkgi1pv029JrI6xytKfY0DJECiAXY9hER5BmI/sVl8bHooOtsq6ySogzc8uiFmZSQ8ZLExIgJQbAhQivDfuFKu4AkaQ+coH7gHMYILGmVCLjLZ6hgVY6RAog7sWTngcctXR2w1ByeVYGznA8dG1nHP2poQFunI8OVBcSIFku1QA8H/sZpZHHDbWhZVb1S900fQKW44F/+YZvV8k+QiAEo+P1BtjYI5Q3YuugSYbGlGZZNgx/NSqg1iNxsiQ/q0ogDAKdRVlK/8h1kVggjbOQEy4KJxC4Ai4nWuKSn+NAfCxSIKLkL7Gaq2iOeoAhgNpTIfJTlHxU6HOXDbRY4oJonZ7k, issuerRevocationPublicKey: LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUhZd0VBWUhLb1pJemowQ0FRWUZLNEVFQUNJRFlnQUU1QUdzekJGM3FBeEwvbmk1SktESklwRlhOTnRrOEJMeQpSVGVqTlBNT0hyVFgyei9tT0ovUFlyM2VZN1V1TTlNNEN2Ymw2KzFpSkF0L2VocGtyUHFRYlluaGFad3NDaWZlCmhHaHg1QzM1VGV0bG1ORmpWTUpMUTMxd2FLSFdOUDg3Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLQo=
+2020-11-03 23:05:49,485 - CA Version: 1.4.0
+2020-11-03 23:05:49,702 - peer0.org1.example.com invoke proposal create sucess

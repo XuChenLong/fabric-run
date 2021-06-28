@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>用户编辑界面</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="userEdit"> 
+    <!-- 头部 -->
+    <div class="header">
+        <!-- 网站标志 -->
+        <div class="logo fl">
+            基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+                    {{loginName}}
+                    <span class="caret"></span>
+                </span>
+                <ul class="dropdown-menu">
+                    <li><a href="Admin_Message">个人资料</a></li>
+                    <li><a href="/A_editpw">修改密码</a></li>
+                    <li><a href="Admin_signout">退出登录</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+        <!-- 侧边栏 -->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item active" href="user.html">
+                		<span class="glyphicon glyphicon-user"></span>
+                        租借管理
+                	</a>
+                </li>
+                <li>
+                    <a class="item" href="article.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		审批权限
+                	</a>
+                </li>
+                <li>
+                    <a class="item" href="article.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		购入申请
+                	</a>
+                </li>
+                <li>
+                    <a class="item" href="article.html">
+                		<span class="glyphicon glyphicon-th-list"></span>
+                		资产信息管理
+                	</a>
+                </li>
+            </ul>
+            
+        </div>
+        <!-- 侧边栏 -->
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+                <h4>{{uData.uid}}</h4>
+                <p class="tips">{{err}}</p>
+            </div>
+            <!-- /分类标题 -->
+            <div class="form-container">
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input type="text" class="form-control" placeholder="请输入用户名" v-model="uData.uname">
+                </div>
+                <div class="form-group" >
+                    <label>角色</label>
+                    <select class="form-control">
+                        <option>普通用户</option>
+                        <option>超级管理员</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>状态</label>
+                    <select class="form-control">
+                        <option>启用</option>
+                        <option>禁用</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" onclick="finish">
+                </div>
+            </div><!--form-->
+        </div>
+    </div>
+	</div>
+    <!-- /主体内容 -->
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./lib/Vue/axios.js"></script>
+	<script src="js/vue.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#userEdit",
+			data:{
+				loginName:"登录用户名",
+				uData:{uid:"20123",uname:"a"},
+				err:""
+			},
+			methods:{
+				findAll:function(){
+					
+					this.loginName=localStorage.getItem("loginName");
+					var el=JSON.parse(localStorage.getItem("uData"));
+					this.uData=el;
+					
+				},
+				//提交修改的信息
+				finish:function(){
+					axios.post('users/edit',{
+						uData:this.uData
+					}).then(res=>{
+						console.log(res.uData);
+					}).catch(err=>{
+						
+					})
+				}
+			},
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>

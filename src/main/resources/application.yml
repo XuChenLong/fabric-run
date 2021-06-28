@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/fabric?&allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  jpa:
+    hibernate:
+      ddl-auto: update
+      format_sql: true
+    #控制台显示sql
+    show-sql: true
+  #redis
+  #redis:
+  #  timeout: PT30M
+  #session:
+  #  store-type: redis
+  #  timeout: PT30M
+server:
+  port: 8080
+
+channelname : mychannel
+chaincodename : userinfo
+oderername : orderer.example.com
+oderergrpc : grpcs://orderer.example.com:7050
+peer0org1 : peer0.org1.example.com
+peer0org1grpc : grpcs://peer0.org1.example.com:7051
+ip: http://192.168.226.128
+adminip: http://192.168.226.128:7054
+userMsp: Org2MSP
+userAffiliation: org2
+adminMsp: Org1MSP
+adminAffiliation: org1
+tlsOrg1Path: src\\main\\resources\\resources\\crypto-config\\peerOrganizations\\org1.example.com\\tlsca\\tlsca.org1.example.com-cert.pem

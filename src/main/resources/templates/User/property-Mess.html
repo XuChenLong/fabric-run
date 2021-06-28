@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>审核查询结果</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="property-Mess">
+	<!-- 头部 -->
+	<div class="header">
+	<!-- 网站标志 -->
+		<div class="logo fl">
+			基于区块链的资产管理系统
+		</div>
+		<!-- /网站标志 -->
+		<!-- 用户信息 -->
+		<div class="info">
+			<div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+					{{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="User_Message">个人资料</a></li>
+					<li><a href="/U_editpw">修改密码</a></li>
+					<li><a href="User_signout">退出登录</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /用户信息 -->
+	</div>
+	<!-- /头部 -->
+	<!-- 主体内容 -->
+	<div class="content">
+		<!-- 侧边栏 -->
+		<div class="aside fl">
+			<ul class="menu list-unstyled">
+				<li>
+					<a class="item" href="Userindex">
+						<span class="glyphicon glyphicon-th-list"></span>
+						当前申请
+					</a>
+				</li>
+				<li>
+					<a class="item" href="User_apply">
+						<span class="glyphicon glyphicon-th-list"></span>
+						租用申请
+					</a>
+				</li>
+				<li>
+					<a class="item active" href="User_property_look">
+						<span class="glyphicon glyphicon-th-list"></span>
+						资产信息查询
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- 侧边栏 -->
+		<div class="main">
+			<!-- 分类标题 -->
+			<div class ="sort-title"style="padding-bottom: 6px;">
+				<h4 style="font-weight: 200;display: inline-block;">资产查询结果</h4>
+
+			</div>
+			<!-- /分类标题 -->
+			<!--资产记录-->
+			<div class="find-menu1" style="margin-top: 5px;">
+				<img src="images/nav.png"/>
+				<span style="font-weight: 400;">资产模块</span>
+			</div>
+			<table class="table" >
+				<thead>
+				<th style="text-align: center;">编号</th>
+				<th style="text-align: center;">资产名称</th>
+				<th style="text-align: center;">数量</th>
+				<th style="text-align: center;">当前库存</th>
+				</thead>
+				<tbody>
+				<tr v-for="(property,index) in propertys" style="text-align: center;">
+					<td v-text="key[index]"></td>
+					<td v-text="property.goodsname"></td>
+					<td v-text="property.maxnum"></td>
+					<td v-text="property.num"></td>
+				</tr>
+
+				</tbody>
+			</table>
+			<!--资产记录结束-->
+			<div style="margin-top: 30px;">说明：当前资产不可进行操作，只供查看</div>
+			<!-- 分页 -->
+			<ul class="pagination">
+				<template v-if="currentPage!=0">
+					<li>
+						<a href="#" v-on:click="findAll(currentPage-1)">
+							<span>&laquo;</span>
+						</a>
+					</li>
+				</template>
+				<template v-if="page<=6">
+					<template v-for="i in page">
+						<template v-if="currentPage+1==i">
+							<li class="active">
+								<a href="#">
+									<span  v-text="i"></span>
+								</a>
+							</li>
+						</template>
+						<template v-else>
+							<li>
+								<a href="#" v-on:click="findAll(i-1)">
+									<span v-text="i"></span>
+								</a>
+							</li>
+						</template>
+					</template>
+				</template>
+				<template v-else-if="page>6&&currentPage<=2">
+					<template v-for="i in 5">
+						<template v-if="currentPage+1==i">
+							<li class="active">
+								<a href="#">
+									<span  v-text="i"></span>
+								</a>
+							</li>
+						</template>
+						<template v-else>
+							<li>
+								<a href="#" v-on:click="findAll(i-1)">
+									<span v-text="i"></span>
+								</a>
+							</li>
+						</template>
+					</template>
+					<li class="disabled">
+						<a>
+							<strong>...</strong>
+						</a>
+					</li>
+					<li >
+						<a href="#"  v-on:click="findAll(page-1)">
+							<span v-text="page"></span>
+						</a>
+					</li>
+				</template>
+
+				<template v-else-if="page>6&&(page - currentPage)<=3">
+					<li >
+						<a href="#" v-on:click="findAll(0)">
+							<span>1</span>
+						</a>
+					</li>
+					<li class="disabled">
+						<a>
+							<strong>...</strong>
+						</a>
+					</li>
+					<template v-for="i in 5">
+						<template v-if="currentPage+1==i+page-5">
+							<li class="active">
+								<a href="#">
+									<span  v-text="i+page-5"></span>
+								</a>
+							</li>
+						</template>
+						<template v-else>
+							<li>
+								<a href="#" v-on:click="findAll(i+page-5-1)">
+									<span v-text="i+page-5"></span>
+								</a>
+							</li>
+						</template>
+					</template>
+				</template>
+
+				<template v-else>
+					<li >
+						<a href="#" v-on:click="findAll(0)">
+							<span>1</span>
+						</a>
+					</li>
+					<li class="disabled">
+						<a>
+							<strong>...</strong>
+						</a>
+					</li>
+					<template v-for="i in 5">
+						<template v-if="i==3">
+							<li class="active">
+								<a href="#">
+									<span  v-text="currentPage+1"></span>
+								</a>
+							</li>
+						</template>
+						<template v-else>
+							<li>
+								<a href="#" v-on:click="findAll(currentPage+-3+i)">
+									<span v-text="i+currentPage-2"></span>
+								</a>
+							</li>
+						</template>
+					</template>
+					<li class="disabled">
+						<a>
+							<strong>...</strong>
+						</a>
+					</li>
+					<li >
+						<a href="#"  v-on:click="findAll(page-1)">
+							<span v-text="page"></span>
+						</a>
+					</li>
+				</template>
+				<template v-if="page!=currentPage+1">
+					<li>
+						<a href="#" v-on:click="findAll(currentPage+1)">
+							<span>&raquo;</span>
+						</a>
+					</li>
+				</template>
+			</ul>
+			<!-- /分页 -->
+		</div>
+
+	</div>
+</div>
+<!-- /主体内容 -->
+<script src="lib/jquery/dist/jquery.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/lib/Vue/axios.js"></script>
+<script src="/js/vue.js"></script>
+<script src="/lib/qs/qs.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:"#property-Mess",
+		data:{
+			loginName:"",
+			temp:[],
+			key:[],
+			propertys:[],
+			currentPage:0,
+			count:0,
+			page:0
+		},
+		methods: {
+			getMessage:function(){
+				this.loginName = localStorage.getItem("loginName");
+				//console.log(location.search);
+				var url = location.search;
+				const map = new Map();
+				if (url.indexOf("?") !== -1) {
+					url = url.match(/\?([^#]+)/)[1];
+					var arr = url.split('&');
+					for (var i = 0; i < arr.length; i++) {
+						var subArr = arr[i].split('=');
+						map.set(subArr[0],subArr[1]);
+					}
+				}
+				var qs=Qs;
+				axios.get('/property/search', {
+							params : {
+								admin: map.get("name"),
+								property: decodeURI(map.get("pname")),
+								state: map.get("state")
+							}
+						}
+				).then(res => {
+					id = map.get("pid");
+					if(id != "") {
+						this.temp[id] = res.data[id];
+					}else {
+						property = decodeURI(map.get("pname"));
+						state = map.get("state");
+						if(state != "" && property != "") {
+							for(index in res.data) {
+								if(state != res.data[index].state && property == res.data[index].goodsname) {
+									this.temp[index] = res.data[index];
+								}
+							}
+						}else if (state != "") {
+							for(index in res.data) {
+								if(state != res.data[index].state) {
+									this.temp[index] = res.data[index];
+								}
+							}
+						}else if (property != "") {
+							for(index in res.data) {
+								if(property == res.data[index].goodsname) {
+									this.temp[index] = res.data[index];
+								}
+							}
+						}else {
+							this.temp=res.data;
+						}
+					}
+					this.count= Object.keys(this.temp).length;
+					this.page = Math.ceil(this.count/10);
+					var count=0;
+					for (index in this.temp) {
+						if(count<10) {
+							this.key[count] = index
+							this.propertys[count] = this.temp[index]
+							count++;
+						}
+						else
+							return false
+					}
+				}).catch(err => {
+					//alert('查询失败，请重新输入搜索条件')
+				})
+			},
+			//初始页面信息
+			findAll: function (currentPage) {
+				this.currentPage = currentPage;
+				var count=0;
+				var i=0;
+				this.propertys=[];
+				for (index in this.temp) {
+					if(count>=(currentPage)*10 && count<(currentPage+1)*10) {
+						this.key[i] = index;
+						this.propertys[i] = this.temp[index];
+						i++;
+						count++;
+					}
+					else if(count<(currentPage)*10)
+						count++;
+					else
+						return false;
+				}
+			}
+		},
+		created(){
+			this.getMessage();
+		}
+	})
+</script>
+</body>
+
+</html>

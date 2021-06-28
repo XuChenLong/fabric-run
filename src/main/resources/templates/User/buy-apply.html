@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>普通用户界面</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/base.css">
+</head>
+
+<body>
+	<div id="buy-apply">
+	<!-- 头部 -->
+    <div class="header">
+    	<!-- 网站标志 -->
+        <div class="logo fl">
+			基于区块链的资产管理系统
+        </div>
+        <!-- /网站标志 -->
+        <!-- 用户信息 -->
+        <div class="info">
+            <div class="profile dropdown fr">
+                <span class="btn dropdown-toggle" data-toggle="dropdown">
+				    {{loginName}}
+					<span class="caret"></span>
+                </span>
+				<ul class="dropdown-menu">
+					<li><a href="User_Message">个人资料</a></li>
+					<li><a href="/U_editpw">修改密码</a></li>
+					<li><a href="User_signout">退出登录</a></li>
+				</ul>
+            </div>
+        </div>
+        <!-- /用户信息 -->
+    </div>
+    <!-- /头部 -->
+    <!-- 主体内容 -->
+    <div class="content">
+   <!-- 	侧边栏-->
+        <div class="aside fl">
+            <ul class="menu list-unstyled">
+                <li>
+                    <a class="item" href="Userindex">
+			  			<span class="glyphicon glyphicon-th-list"></span>
+			  			当前申请
+			  		</a>
+                </li>
+				<li>
+				    <a class="item active" href="User_apply">
+						<span class="glyphicon glyphicon-th-list"></span>
+						租用申请
+					</a>
+				</li>
+				<li>
+				    <a class="item" href="User_property_look">
+						<span class="glyphicon glyphicon-th-list"></span>
+						资产信息查询
+					</a>
+				</li>
+            </ul>
+        </div>
+        <!-- 侧边栏 --> 
+        <div class="main">
+			<!--分页内容 -->
+			<!-- 分类标题 -->
+			<div class ="title" style="border-bottom: 1px solid #999999;
+			padding-bottom: 10px;
+			">
+			    <h4 style="display: inline-block;">购买申请表填写</h4>
+				<div class="aside-tab">
+						<a href="#" @click="submit">提交</a>
+						<!-- <a href="#">保存</a>-->
+						<a href="#" @click="reset">重置</a> 
+				</div>
+			</div>
+			<!-- /分类标题 -->
+			<table class="apply-tab">
+			    <thead>
+				<tr>
+					<th>管理员编号：</th>
+					<td><input type="text" v-model="aname" /> </td>
+				</tr>
+				<tr>
+					<th>物品编号：</th>
+					<td><input type="text" v-model="gname" /> </td>
+			    </tr>
+			    </thead>
+			    <tbody>
+				  <tr>
+				  	  <th>申请数量：</th>
+				  	  <td><input v-model="num" type="text"/></td>
+				  </tr>
+			    </tbody>
+			</table>
+			
+			<div class="explain">说明：点击【提交】可完成当前表单的填写，或改选其它选项</div>
+			
+        </div>
+    </div>
+	</div>
+    <!-- /主体内容 -->
+
+    
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+	<script src="/lib/Vue/axios.js"></script>
+	<script src="/js/vue.js"></script>
+	<script src="/lib/qs/qs.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#buy-apply",
+			data:{
+				loginName:"",
+				aname:"",
+				gname:"",
+				num:"",
+			},
+			methods:{
+				//寻找用户名
+				findAll:function(){
+					this.loginName=localStorage.getItem("loginName");
+				},
+				//发送数据
+				submit:function(){
+					var qs=Qs;
+					axios.post('/property/lend',qs.stringify({
+						aname: this.aname,
+						id:this.gname,
+						num:this.num,
+					})).then(res=>{
+						if(res.data.code == 200) {
+							alert(" 添加成功")
+						}else {
+							msg=res.data.msg;
+							alert(msg);
+						}
+						location.reload(true);
+					}).catch(err=>{
+						
+					})
+				},
+				//刷新数据
+				reset:function(){
+					location.reload(true);
+				}
+			},
+			created(){
+				this.findAll();
+			}
+		})
+	</script>
+</body>
+
+</html>
